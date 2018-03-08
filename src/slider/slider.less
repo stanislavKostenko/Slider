@@ -1,0 +1,95 @@
+.slider {
+  position: relative;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+  height: 300px;
+  border: 1px solid black;
+  margin-top: 10rem;
+
+  &__prev-slide {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    font-size: 3rem;
+    transform: translateY(-50%);
+    color: #ffffff;
+    z-index: 4;
+  }
+
+  &__next-slide {
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    font-size: 3rem;
+    transform: translateY(-50%);
+    color: #ffffff;
+    z-index: 4;
+  }
+
+  &__slides {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+      z-index: 2;
+      animation-name: FadeIn;
+      animation-duration: 2s;
+    }
+
+    &:first-child {
+
+      background-image: url('../../assets/images/car_1.jpg');
+    }
+
+    &:nth-child(2) {
+      background-image: url('../../assets/images/car_2.jpg');
+    }
+
+    &:nth-child(3) {
+      background-image: url('../../assets/images/car_3.jpg');
+    }
+
+    &:last-child {
+      background-image: url('../../assets/images/car_4.jpg');
+    }
+
+
+  }
+
+  &__pager-wrapper {
+    display: flex;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+  }
+
+  &__pager-item {
+    margin: 0 1rem;
+    width: 15px;
+    height: 15px;
+    background-color: rgba(0, 212, 212, 0.47);
+    border-radius: 50%;
+
+    &.active {
+      background-color: rgb(0, 212, 212);
+    }
+  }
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;}
+
+  100% {
+    opacity: 1;
+  }
+}
